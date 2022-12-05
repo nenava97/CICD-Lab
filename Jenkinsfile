@@ -9,7 +9,8 @@ pipeline {
                             dir('docker') {
                               sh 'sudo docker build -t kuracontainers .' 
                             }
-      }
+        }
+       }
     }
     stage('Push to Dockerhub') {
      agent{label 'DockerAgent'}
