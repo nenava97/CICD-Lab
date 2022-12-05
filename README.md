@@ -6,7 +6,7 @@ A server that is able to have Jenkins installed, with an AWS account a free-tier
 
 Steps:
 
-1. Clone this GitHub repository and create GitHub personal access token. 
+1. Fork this GitHub repository and create GitHub personal access token. 
 - Navigate to GitHub settings, select developer
 settings, select personal access token and create new token. 
 - Select a 30 day expiration and the following scopes: repo and admin:repo_hook. 
