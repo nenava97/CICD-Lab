@@ -12,7 +12,7 @@ settings, select personal access token and create new token.
 - Select a 30 day expiration and the following scopes: repo and admin:repo_hook. 
 
 2. Install and configure Jenkins controller on EC2 instance.
-- Use the following script to update the EC2 instance"
+- Use the following script to update the EC2 instance.
 ```
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install openjdk-11-jre-headless -y
@@ -21,21 +21,19 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \ https://pkg.jenki
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install jenkins -y
 ```
-- After installing Jenkins, copy the password which you will need to enter when visit Jenkins in browser at localhost:8080
+- After installing Jenkins, copy the password which you will need to enter when visit Jenkins in browser at localhost:8080.
 ```
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword)
 ```
+3. Install and set up Jenkins agent in other EC2. 
+- Use the previous script to update the EC2 instance.
+- Create a Jenkins agent profile/nodes for the Docker serverthat will launch agents via SSH and only build jobs with label expressions matching the node in the Jenkinsfile.
 
-3. Observe Dockerfile 
+4. Observe Dockerfile 
 - In addition to creating a Docker image for your application, how does it interact with DockerHub?  
 
-4. Build application pipeline.
-- In Jenkins click on new item and create new multibranch (?) pipeline 
-- Under Branch Source add source "GitHub", under Credentials add "Jenkins" and under username enter GitHub username and under password enter GitHub access token created in Step 1.
-- Enter forked repository url and validate
-- Ensure Build Configuration says Jenkinsfile
-- Apply and Save
-- Select Scan repository if build doesn’t automatically start creating
+5. Build application pipeline.
+- In Jenkins create new multibranch (?) pipeline with GitHub Branch Source and the forked repository url.
 
 Questions to think about:
 What additional step(s) can be added to improve the continous integration and continous deployment of this application? Hint: GitHub tools, IaC tools, management tools, etc. Where and how would they be integrated. 
