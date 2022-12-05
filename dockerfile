@@ -1,7 +1,4 @@
 FROM nginx:latest
-
-COPY ./app/nginx.config /etc/nginx/conf.d/default.conf
-
+COPY ./nginx.config /etc/nginx/conf.d/default.conf
 WORKDIR /app
-
-COPY ./app/index.html ./index.html
+COPY ./index.html ./index.html
