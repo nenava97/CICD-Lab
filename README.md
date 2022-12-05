@@ -26,12 +26,16 @@ sudo apt-get install jenkins -y
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword)
 ```
 
-3. Create a Docker image for your app.
+3. Observe Dockerfile 
+- In addition to creating a Docker image for your application, how does it interact with DockerHub?  
 
 4. Build application pipeline.
 - In Jenkins click on new item and create new multibranch (?) pipeline 
-- Under Branch Source add source "GitHub", under Credentials add "Jenkins" and under username enter GitHub username and under password enter GitHub access token created in Step 1
-- project link to GitHub repository and 
+- Under Branch Source add source "GitHub", under Credentials add "Jenkins" and under username enter GitHub username and under password enter GitHub access token created in Step 1.
+- Enter forked repository url and validate
+- Ensure Build Configuration says Jenkinsfile
+- Apply and Save
+- Select Scan repository if build doesn’t automatically start creating
 
 Questions to think about:
 What additional step(s) can be added to improve the continous integration and continous deployment of this application? Hint: GitHub tools, IaC tools, management tools, etc. Where and how would they be integrated. 
