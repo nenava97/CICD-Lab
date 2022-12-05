@@ -28,7 +28,7 @@ pipeline {
      steps {
         script {
           sh '''#!/bin/bash
-          sudo docker start nenava97/kuracontainers:latest
+          sudo docker run -p 8003:80 nenava97/kuracontainers:latest
           '''  
             }
         }
